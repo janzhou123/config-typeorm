@@ -19,7 +19,7 @@ export class CoffeeController implements CrudController<Coffee> {
     description: '使用find()方法，获取所有咖啡数据',
   })
   @Get('/all-coffee')
-  getAllCoffees(): any {
+  getAllCoffees() {
     return this.service.find();
   }
 }

@@ -1,7 +1,7 @@
 import type { Request } from 'express';
 import type { IncomingMessage } from 'http';
 import type { Params } from 'nestjs-pino';
-import { multistream, pino } from 'pino';
+import { multistream } from 'pino';
 import type { ReqId } from 'pino-http';
 
 const passUrl = new Set(['/health', '/graphql']);
@@ -9,10 +9,7 @@ const passUrl = new Set(['/health', '/graphql']);
 export const loggerOptions: Params = {
   pinoHttp: [
     {
-      // https://getpino.io/#/docs/api?id=timestamp-boolean-function
-      // Change time value in production log.
-      timestamp: pino.stdTimeFunctions.isoTime,
-      // timestamp: () => `,"time":"${new Date(Date.now()).toISOString()}"`,
+      timestamp: () => `,"time":"${new Date(Date.now()).toISOString()}"`,
       quietReqLogger: true,
       genReqId: (req: IncomingMessage): ReqId =>
         (<Request>req).header('X-Request-Id'),

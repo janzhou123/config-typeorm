@@ -3,6 +3,8 @@ import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { knife4jSetup } from 'nestjs-knife4j';
 import { Logger, LoggerErrorInterceptor } from 'nestjs-pino';
+import { HttpExceptionFilter } from './filters';
+import { TransformInterceptor } from './interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -28,6 +30,10 @@ async function bootstrap() {
   });
   app.useLogger(app.get(Logger));
   app.useGlobalInterceptors(new LoggerErrorInterceptor());
+  // 全局注册错误的过滤器
+  app.useGlobalFilters(new HttpExceptionFilter());
+  // 全局注册拦截器
+  app.useGlobalInterceptors(new TransformInterceptor());
   await app.listen(3000);
 }
 bootstrap();
