@@ -1,0 +1,10 @@
+db:
+  mysql1:
+    dbBase: testdb
+    dbPwd: root
+    dbUser: root
+    synchronize: false
+  mysql2:
+    dbName: mysql1-prod2
+    dbBase: pwd-prod2
+    synchronize: false

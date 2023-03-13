@@ -1,0 +1,7 @@
+db:
+  mysql1:
+    dbHost: localhost
+    dbPort: 3306
+  mysql2:
+    dbHost: localhost
+    dbPort: 3306

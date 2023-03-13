@@ -1,0 +1,11 @@
+db:
+  mysql1:
+    dbBase: testdb
+    dbPwd: root
+    dbUser: root
+    synchronize: true
+  mysql2:
+    dbBase: mysql1-dev2
+    dbPwd: pwd-dev2
+    dbUser: root
+    synchronize: true
