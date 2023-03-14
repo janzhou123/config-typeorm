@@ -1,6 +1,6 @@
 db:
   mysql1:
-    dbBase: testdb
+    dbBase: testdb-prod
     dbPwd: root
     dbUser: root
     synchronize: false
