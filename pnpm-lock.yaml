@@ -32,6 +32,7 @@ specifiers:
   nanoid: ^4.0.1
   nestjs-knife4j: ^1.0.1
   nestjs-pino: ^3.1.2
+  pino: ^8.11.0
   pino-http: ^8.3.3
   pino-pretty: ^9.4.0
   prettier: ^2.3.2
@@ -65,6 +66,7 @@ dependencies:
   nanoid: 4.0.1
   nestjs-knife4j: 1.0.1
   nestjs-pino: 3.1.2_atacoy3e24brwbzjtinj7jrj3e
+  pino: 8.11.0
   pino-http: 8.3.3
   reflect-metadata: 0.1.13
   rxjs: 7.8.0
